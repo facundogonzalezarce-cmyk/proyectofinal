@@ -1,1 +1,13 @@
-print("ACÀ HAGO CÒDIGO YO, ALAN.")
+class Sena():
+    def __init__ (self):
+    
+class SenaEstatica():
+    def __init__(self):
+
+class SenaDinamica():
+    def __init__(self):
+class Gesto():
+    def __init__(self):
+
+
+#utilizar landmarks

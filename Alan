@@ -1,13 +1,44 @@
 class Sena():
-    def __init__ (self):
-    
-class SenaEstatica():
-    def __init__(self):
+    def __init__ (self, nombre, idioma):
+        self.__nombre = nombre
+        self.__idioma = idioma
 
-class SenaDinamica():
-    def __init__(self):
-class Gesto():
-    def __init__(self):
+    def describir(self):
+        print("SEÑA: ", self.__nombre, "IDIOMA: ", self.__idioma)
+
+    @property
+    def nombre(self):
+        return self.__nombre
+
+    def idioma(self):
+        return self.__idioma
+
+class SenaEstatica(Sena):#UNA SENA QUIETA, EN UNA POSICION
+    def __init__(self,nombre, idioma, posicion):
+        super().__init__(nombre, idioma)
+        self.__posicion = posicion
+
+    def describir(self):
+        print("SEÑA ESTÀTICA: ", self.__nombre, "POSICION: ", self._posicion)
 
 
-#utilizar landmarks
+class SenaDinamica(Sena):#UNA SENA QUE SE MUEVE
+    def __init__(self,nombre, idioma, movimiento):
+        super().__init__(nombre, idioma)
+        self.__movimiento = movimiento
+
+    def describir(self):
+        print("SEÑA DINÀMICA: ", self.__nombre , "MOVIMIENTO: ", self.__movimiento)
+
+
+class Gesto(Sena):#ACCION O EXPRESION RECONOCIBLE DE LA MANO
+    def __init__(self, nombre, idioma, tipodegesto):
+            super().__init__(nombre, idioma)
+            self.__tipodegesto = tipodegesto
+
+    def describir(self):
+        return f"Gesto: {self.__nombre}, tipo: {self.__tipodegesto}"
+
+
+
+#este modulo lo que hace es que recibe lo que  se detecta en la camara con open cv y landmarks y los representa, crea unas clasees y usa el nombre de la seña para traducrila a texto
